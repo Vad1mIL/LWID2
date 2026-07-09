@@ -51,34 +51,36 @@ API keys for DeepSeek (and optionally Anthropic).
 Steps
 Clone the repository
 
+
 bash
 git clone https://github.com/Vad1mIL/LWID2.git
 cd LWID2
 Create a virtual environment
+
 
 bash
 python -m venv venv
 source venv/bin/activate   # Windows: venv\Scripts\activate
 Install dependencies
 
+
 bash
 pip install -r requirements.txt
 Set up environment variables
 Create a .env file in the project root:
+
 
 env
 DEEPSEEK_API_KEY=your_deepseek_api_key
 # ANTHROPIC_API_KEY=your_anthropic_key   # optional
 Start the HexStrike MCP server (if not already running)
 
-bash
-hexstrike-mcp --server http://127.0.0.1:8888
-🖥 Usage
-Run the orchestrator:
+
 
 bash
 python main.py
 You will be prompted to enter the target description, e.g.:
+
 
 text
 [TARGET] Enter target (IP/URL) and task: 10.10.10.5 — get root
