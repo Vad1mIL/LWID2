@@ -1,0 +1,42 @@
+# ============================================================
+# LWID 2.0 — Python Dependencies
+# ============================================================
+
+# --- AutoGen Framework (multi-agent orchestration) ---
+autogen-agentchat>=0.4.0
+autogen-core>=0.4.0
+autogen-ext[anthropic,openai,mcp]>=0.4.0
+
+# --- LLM SDKs ---
+openai>=1.0.0
+anthropic>=0.30.0
+
+# --- MCP / FastMCP (tool server protocol) ---
+mcp>=1.0.0
+fastmcp>=2.0.0
+
+# --- Web scraping & browser automation ---
+beautifulsoup4>=4.12.0
+selenium>=4.20.0
+
+# --- Web framework ---
+flask>=3.0.0
+
+# --- HTTP clients ---
+requests>=2.31.0
+httpx>=0.27.0
+aiohttp>=3.9.0
+
+# --- Traffic interception ---
+mitmproxy>=10.0.0
+
+# --- Binary exploitation ---
+pwntools>=4.12.0
+
+# --- Binary analysis ---
+angr>=9.2.0
+
+# --- Utilities ---
+python-dotenv>=1.0.0
+diskcache>=5.6.0
+psutil>=5.9.0
