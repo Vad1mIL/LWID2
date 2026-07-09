@@ -52,8 +52,8 @@ Steps
 Clone the repository
 
 bash
-git clone https://github.com/yourusername/lwid2.git
-cd lwid2
+git clone https://github.com/Vad1mIL/LWID2.git
+cd LWID2
 Create a virtual environment
 
 bash
@@ -99,27 +99,6 @@ The system will then start the autonomous loop. You can intervene at any time us
 Any free‑text input will be treated as an operator directive and injected into the agent’s context.
 
 
-For production use, consider moving these to a config.yaml or .env.
-
-📁 Project Structure
-text
-lwid2/
-├── main.py                 # Entry point, orchestrator, operator menu
-├── agents/
-│   ├── lead_planner.py     # Strategic agent + tactical engine
-│   ├── researcher.py       # Exploit-DB search & analysis
-│   └── exploit_adapter.py  # PoC sanitisation & adaptation
-├── core/
-│   ├── memory.py           # KB management, Archivist, summarisation
-│   └── state.py            # Session persistence (save/load)
-├── tools/
-│   ├── exploit_tools.py    # searchsploit wrappers (async)
-│   └── mcp_client.py       # MCP workbench & Executor agent factory
-├── requirements.txt
-├── .env                    # API keys (not committed)
-└── README.md
-🛠 Technology Stack
-LLM Frameworks: Microsoft AutoGen (agent orchestration), autogen-ext[cache] (disk caching).
 
 Models: DeepSeek (chat & reasoning), Anthropic Claude (optional for Lead Planner).
 
@@ -135,10 +114,6 @@ Distributed under the MIT License. See LICENSE for more information.
 
 🙏 Acknowledgements
 AutoGen by Microsoft.
-
-DeepSeek for powerful and affordable reasoning models.
-
 Exploit-DB and the searchsploit utility.
-
 HexStrike for the MCP workbench.
 Made with ❤️ for the CTF & Red Team community.
