@@ -22,40 +22,7 @@ The system combines the reasoning power of **DeepSeek** (and optionally Anthropi
 
 ---
 
-## 🏗 Architecture Overview
-┌────────────────────────────────────────────────────────────────────┐
-│ OPERATOR (CLI) │
-└────────────────────────────────────────────────────────────────────┘
-│
-▼
-┌────────────────────────────────────────────────────────────────────┐
-│ LEAD PLANNER (Agent) │
-│ - Receives KB + History + Tactical Directive │
-│ - Decides next tool (execute_shell, search_exploit, etc.) │
-└────────────────────────────────────────────────────────────────────┘
-│
-┌───────────────────────┼───────────────────────┐
-▼ ▼ ▼
-┌──────────────────┐ ┌──────────────────────┐ ┌─────────────────────┐
-│ Researcher │ │ Exploit Adapter │ │ Executor │
-│ - searchsploit │ │ - Extract PoC │ │ - MCP Workbench │
-│ - Read PoC code │ │ - Sanitise & Adapt │ │ - tmux/execute_shell│
-│ - LLM analysis │ │ - Generate script │ │ - Returns raw output│
-└──────────────────┘ └──────────────────────┘ └─────────────────────┘
-│
-▼
-┌────────────────────────────────────────────────────────────────────┐
-│ ARCHIVIST (LLM) │
-│ - Compresses command output into structured Knowledge Base │
-│ - Updates state_flags (has_rce, has_root, etc.) │
-└────────────────────────────────────────────────────────────────────┘
-│
-▼
-┌────────────────────────────────────────────────────────────────────┐
-│ KNOWLEDGE BASE (JSON) + STATE │
-└────────────────────────────────────────────────────────────────────┘
 
-text
 
 ### Agent Roles
 
@@ -131,19 +98,6 @@ The system will then start the autonomous loop. You can intervene at any time us
 
 Any free‑text input will be treated as an operator directive and injected into the agent’s context.
 
-🧩 Configuration
-All tunable parameters (timeouts, limits, paths) are defined as constants at the top of main.py.
-You can adjust them without modifying the core logic:
-
-MAX_HISTORY_MESSAGES = 16
-
-SUMMARIZE_THRESHOLD = 12
-
-EXEC_TIMEOUT = 120 # seconds
-
-HEXSTRIKE_URL = "http://127.0.0.1:8888"
-
-TMUX_HTTP_TIMEOUT = 60
 
 For production use, consider moving these to a config.yaml or .env.
 
@@ -175,18 +129,6 @@ Async Runtime: Python asyncio with subprocess and HTTP sessions.
 
 Persistence: diskcache for LLM caching, JSON for session state.
 
-🤝 Contributing
-Contributions are welcome! Please open an issue or pull request for any improvements, bug fixes, or new features.
-
-Fork the repository.
-
-Create your feature branch (git checkout -b feature/amazing-feature).
-
-Commit your changes (git commit -m 'Add some amazing feature').
-
-Push to the branch (git push origin feature/amazing-feature).
-
-Open a Pull Request.
 
 📄 License
 Distributed under the MIT License. See LICENSE for more information.
@@ -199,5 +141,4 @@ DeepSeek for powerful and affordable reasoning models.
 Exploit-DB and the searchsploit utility.
 
 HexStrike for the MCP workbench.
-
-<p align="center"> Made with ❤️ for the CTF & Red Team community. </p> ```
+Made with ❤️ for the CTF & Red Team community.
