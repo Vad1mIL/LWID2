@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""
+
 LWID 2.0 — main.py
 ~~~~~~~~~~~~~~~~~~~
 
