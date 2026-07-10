@@ -70,7 +70,7 @@ pip install -r requirements.txt
 4. Set up environment variables
 Create a .env file in the project root directory:
 
-Фрагмент кода
+Create a .env file in root folder 
 DEEPSEEK_API_KEY=your_deepseek_api_key
 ANTHROPIC_API_KEY=your_anthropic_key  # Optional
 Usage
